@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont_index.css">
+</head>
+
+<body>
+    <div class="main">
+        <img class="img-rounded img" style="height: 239.2px;" src="img/background/1.jpg" alt="">
+        <img class="img-rounded img" style="height: 426.837px;" src="img/background/2.jpg">
+        <img class="img-rounded img" style="height: 300px;" src="img/background/6.jpg">
+        <img class="img-rounded img" style="height: 320px;" src="img/background/4.png">
+        <img class="img-rounded img" style="height: 240px;" src="img/background/8.jpg">
+        <img class="img-rounded img" style="height: 300px;" src="img/background/3.jpg">
+        <img class="img-rounded img" style="height: 299.837px;" src="img/background/7.jpg">
+        <img class="img-rounded img" style="height: 336px;" src="img/background/9.jpg">
+        <img class="img-rounded img" style="height: 360px;" src="img/background/10.jpg">
+        <img class="img-rounded img" style="height: 359.888px;" src="img/background/11.jpg">
+        <img class="img-rounded img" style="height: 269.150px;" src="img/background/12.jpg">
+        <img class="img-rounded img" style="height: 160px;" src="img/background/13.jpg">
+        <img class="img-rounded img" style="height: 359.850px;" src="img/background/14.jpg">
+        <img class="img-rounded img" style="height: 286.212px;" src="img/background/15.jpg">
+        <img class="img-rounded img" style="height: 288.425px;" src="img/background/16.jpg">
+        <img class="img-rounded img" style="height: 264.413px;" src="img/background/17.jpg">
+        <img class="img-rounded img" style="height: 240px;" src="img/background/18.jpg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/19.jpg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/20.jpg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/21.jpg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/22.jpeg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/23.jpeg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/24.jpeg">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/25.png">
+        <img class="img-rounded img" style="height: 144px;" src="img/background/26.jpeg">
+    </div>
+
+    <!--登录模态框-->
+    <div class="modal fade" id="login_modal" role="dialog" aria-hidden="false" aria-label="modal"
+        data-backdrop="static">
+        <div class="modal-dialog" style="width: 400px;">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" id="login_close" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+                <div class="h2" style="margin-left:110px; margin-top: 50px; font-family: 微软雅黑;">欢迎来到IMG</div>
+                <div style="text-align: center;margin-top: 30px;">
+                    <img class="head-photo" src="img/logo.png">
+                </div>
+                <div class="container" style="height: 300px;">
+                    <form class="form-inline" role="form" method="post">
+                        <br>
+                        <div class="form-group" style="margin-left: 60px;">
+                            <!--                        <label class="h4" style="font-family: 微软雅黑" for="username">用户名：</label>-->
+                            <span class="iconfont">&#xe63e; : </span>
+                            <input type="text" class="form-control" name="user" id="username" placeholder="用户名">
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-left: 60px;margin-top: 5px;">
+                            <!--                        <label class="h4" style="font-family: 微软雅黑; margin-left: 7px;" for="password"> 密 码 ：</label>-->
+                            <span class="iconfont">&#xe62a; : </span>
+                            <input type=password class="form-control" name="passwd" id="password" placeholder="密码">
+                        </div>
+                        <div id="error_msg"></div>
+                        <div style="text-align: center;width: 400px;margin-top: 30px;">
+                            <button type="button" class="btn btn-default" id="login" style="width: 150px;">登录</button>
+                            <br>
+                            <button type="button" class="btn btn-default" id="yibanlogin"
+                                style="width: 150px;margin-top: 20px;">易班登录</button>
+                            <br>
+                            <br>
+                            <a id="forgetpass">忘记密码？</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--注册模态框-->
+    <div class="modal fade" id="register_modal" role="dialog" aria-hidden="false" aria-label="modal"
+        data-backdrop="static">
+        <div class="modal-dialog" style="width: 430px;">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" id="register_close" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+                <div class="h2" style="margin-left:120px; margin-top: 70px; font-family: 微软雅黑;">成为IMG的一员</div>
+                <div class="container" style="height: 450px;margin-top: 30px;">
+                    <form class="form-inline" role="form" method="post">
+                        <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                            <small style='color: grey;margin-left: 10px;'>包含字母和数字,且位数在6~20之间</small><br>
+                            <span class="iconfont">&#xe63e; : </span>
+                            <!--                        <label class="h4" style="font-family: 微软雅黑" for="r_username">用户名：</label>-->
+                            <input type="text" class="form-control" onblur="isregister()" id="r_username"
+                                placeholder="用户名">
+                            <span class="iconfont_index"
+                                style="top: 15px; color:lightgreen;display: none;">&#xe516;</span>
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                            <span class="iconfont">&#xe667; : </span>
+                            <!--                        <label class="h4" style="font-family: 微软雅黑" for="r_email">邮箱:</label>-->
+                            <input type="email" class="form-control" onblur="emailcheck()" id="r_email"
+                                placeholder="邮箱">
+                            <span class="iconfont_index"
+                                style="top: 15px; color:lightgreen;display: none;">&#xe516;</span>
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-left: 60px; margin-top: 10px;">
+                            <small style='color: grey;margin-left: 30px;'>密码位数不得小于6位</small><br>
+                            <span class="iconfont">&#xe601; : </span>
+                            <input type="password" class="form-control" onblur="password()" id="r_password"
+                                placeholder="密码">
+                            <span class="iconfont_index"
+                                style="top: 15px; color:lightgreen;display: none;">&#xe516;</span>
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                            <span class="iconfont">&#xe60a; : </span>
+                            <input type="password" class="form-control" onblur="password_firm()" id="r_confirmpassword"
+                                placeholder="确认密码">
+                            <span class="iconfont_index"
+                                style="top: 15px; color:lightgreen;display: none;">&#xe516;</span>
+                        </div>
+                        <br>
+                        <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                            <input type="text" class="form-control" id="ver" placeholder="验证码">
+                            <button type="button" class="btn btn-primary" id="ver_btn">发送验证码</button>
+                        </div>
+                        <br>
+                        <div class="checkbox" style="margin-left: 80px; margin-top: 20px;">
+                            <label style="font-family: '微软雅黑'; font-size: 12px;">
+                                <input type="checkbox" id="terms_input" style="vertical-align:middle;margin: 0 0;">
+                                <span style="vertical-align:middle;">同意 IMG 的服务条款和隐私政策</span>
+                            </label>
+                            <a type="button" style="font-family: '微软雅黑'; font-size: 12px;cursor: pointer"
+                                id="terms">详情</a>
+                        </div>
+                        <br>
+                        <div style="text-align: center;width: 400px;margin-top: 30px;">
+                            <button type="button" class="btn btn-default" id="register">注册</button>
+                            <button class="btn btn-default" id="yibanlogin_">易班登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--服务条款-->
+    <div class="modal fade" id="terms_modal" role="dialog" aria-hidden="false" aria-label="modal"
+        data-backdrop="static">
+        <div class="modal-dialog" style="width: 730px;">
+            <div class="modal-content" style="height:650px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+                <p class="h3" style="text-align: center;">用户服务协议及隐私保护政策</p>
+                <div class="pre-scrollable"
+                    style="border:1px; max-height: 99999px; height: 570px;margin-top: 10px;width: 700px;margin-left: 15px;border-radius: 8px;">
+                    <pre style="font-family: 微软雅黑">
+欢迎您使用“IMG”软件及相关服务！
+1、适用范围
+    1.1 本协议是您与“IMG”之间就您使用软件，并获得“IMG”软件提供的相关服务所订立的协议。运营方有权依“IMG”软件及相关服务或运营的需要单方决定，安排或指定其关联公司、控制公司、继承公司或公司认可的第三方公司继续运营“IMG”软件。并且，就本协议项下涉及的某些服务，可能会由公司的关联公司、控制公司、继承公司或公司认可的第三方公司向您提供。您知晓并同意接受相关服务内容，即视为接受相关权利义务关系亦受本协议约束。
+    1.2 “用户”指所有直接或间接获取和使用“IMG”软件及相关服务的使用者，包括自然人、法人和其他组织等。在本协议中称为“用户”或称“您”。
+    1.3 “IMG”指由公司合法拥有并运营的、标注名称为“IMG”的网站。包括易班上线之后的部分应用。运营方有权对应用程序及网站名称单方变更（包括但不限于更名、新增等）。
+2、关于“账号”
+    2.1 “IMG”为用户提供了注册通道，用户有权选择合法的字符组合作为自己的账号，并自行设置符合安全要求的密码。用户设置的账号、密码是用户用以登录并以注册用户身份使用“IMG”软件及相关服务的凭证。
+    2.2 账号注销
+    在需要终止使用“IMG”账号服务时，符合以下条件的，您可以申请注销您的“IMG”账号：
+    （1）您仅能申请注销您本人的账号，并依照“IMG”的流程进行注销；
+    （2）您仍应对您在注销账号前且使用“IMG”服务期间的行为承担相应责任；
+    （3）注销成功后，账号记录、功能等将无法恢复或提供。
+3、用户个人信息保护
+    3.1 网站与用户一同致力于用户个人信息（即能够独立或与其他信息结合后识别用户身份的信息）的保护，保护用户个人信息是网站的基本原则之一。未经用户同意，运营方不会向公司以外的任何公司、组织和个人披露您的个人信息，但法律法规及本协议另有规定的除外。
+    3.2 公司将运用与“IMG”软件及相关服务相匹配的安全技术及其他安全措施并建立完善的管理制度来保护您的个人信息。
+    3.3 您可随时浏览、修改自己提交的个人身份信息，您理解并同意出于安全性和身份识别（如账号或密码找回申诉服务等）的考虑，您可能无法修改注册时提供的初始注册信息及其他验证信息。
+    3.4公司不会将您的个人信息转移或披露给第三方，除非：
+    （1） 事先获得您的明确授权；
+    （2） 您分享的信息；
+    （3） 根据有关的法律法规规定或按照司法、行政等国家机关的要求；
+    （4） 出于实现公司向您提供服务所必需的目的，向公司的关联方、合作伙伴分享提供服务所必需的个人信息，公司及其关联方、合作伙伴无权将共享的个人信息用于任何其他用途；
+    （5） 以维护公共利益或学术研究为目的；
+    （6） 为维护“IMG”其他用户、公司及其关联公司、控制公司、继承公司的合法权益，例如查找、预防、处理欺诈或安全方面的问题；
+    （7） 公司为维护合法权益而向用户提起诉讼或仲裁；
+    （8） 在涉及合并、分立、收购、资产转让或类似的交易时，如涉及到个人信息转让，公司会要求新的持有您的个人信息的公司、组织继续受本隐私政策的约束，否则，公司有权要求该公司、组织重新取得您的授权同意；
+    （9） 符合本协议相关条款的规定。
+    3.5请您注意勿在使用“IMG”软件及相关服务中透露自己的各类财产账户、银行卡、信用卡、第三方支付账户及对应密码等重要资料，否则由此带来的任何损失由您自行承担。您不应将个人信息通过“IMG”上发表、上传或扩散。
+4、 用户行为规范
+    4.1 用户行为要求
+        您应对其使用本产品及相关服务的行为负责，除非法律允许或者经公司事先书面许可，您使用“IMG”软件及相关服务不得具有下列行为：
+        4.1.1 使用未经公司授权或许可的任何插件、外挂、系统或第三方工具对“抖音”软件及相关服务的正常运行进行干扰、破坏、修改或施加其他影响。
+        4.1.2 利用或针对“IMG”软件及相关服务进行任何危害计算机网络安全的行为，包括但不限于：
+        （1）非法侵入他人网络、干扰他人网络正常功能、窃取网络数据等危害网络安全的活动；
+        （2）提供专门用于从事侵入网络、干扰网络正常功能及防护措施、窃取网络数据等危害网络安全活动的程序、工具；
+        （3）明知他人从事危害网络安全的活动的，为其提供技术支持、广告推广、支付结算等帮助
+        （4）使用未经许可的数据或进入未经许可的服务器/账号；
+        （5）未经允许进入公众计算机网络或者他人计算机系统并删除、修改、增加存储信息；
+        （6）未经许可，企图探查、扫描、测试“IMG”系统或网络的弱点或其它实施破坏网络安全的行为；
+        （7）企图干涉、破坏“IMG”系统或网站的正常运行，故意传播恶意程序或病毒以及其他破坏干扰正常网络信息服务的行为；
+        （8）伪造TCP/IP数据包名称或部分名称。
+    4.2 信息内容规范
+        4.2.1 用户按规定完成实名认证后，可以以注册账号或“IMG”合作平台账号登录“IMG”发布内容、跟帖评论等。
+        4.2.2 公司致力使跟帖评论成为文明、理性、友善、高质量的意见交流。在推动跟帖评论业务发展的同时，不断加强相应的信息安全管理能力，完善跟帖评论自律，切实履行社会责任，遵守国家法律法规，尊重公民合法权益，尊重社会公序良俗。
+        4.2.3 用户制作、评论、发布、传播的内容（包括但不限于上传至“IMG”平台的未公开的私密视频）应自觉遵守法律法规、社会主义制度、国家利益、公民合法权益、社会公共秩序、道德风尚和信息真实性等“七条底线”要求，否则公司将立即采取相应处理措施。用户不得发表下列信息：
+            （1）反对宪法确定的基本原则的；
+            （2）危害国家安全，泄露国家秘密；
+            （3）颠覆国家政权，推翻社会主义制度，煽动分裂国家，破坏国家统一的；
+            （4）损害国家荣誉和利益的；
+            （5）宣扬恐怖主义、极端主义的；
+            （6）宣扬民族仇恨、民族歧视，破坏民族团结的；
+            （7）煽动地域歧视、地域仇恨的；
+            （8）破坏国家宗教政策，宣扬邪教和迷信的；
+            （9）编造、散布谣言、虚假信息，扰乱社会秩序、破坏社会稳定的；
+            （10）散布、传播淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
+            （11）危害网络安全、利用网络从事危害国家安全、荣誉和利益的；
+            （12）侮辱或者诽谤他人，侵害他人合法权益的；
+            （13）对他人进行暴力恐吓、威胁，实施人肉搜索的；
+            （14）涉及他人隐私、个人信息或资料的；
+            （15）散布污言秽语，损害社会公序良俗的；
+            （16）侵犯他人隐私权、名誉权、肖像权、知识产权等合法权益内容的；
+            （17）散布商业广告，或类似的商业招揽信息、过度营销信息及垃圾信息；
+            （18）使用本网站常用语言文字以外的其他语言文字评论的；
+            （19）与所评论的信息毫无关系的；
+            （20）所发表的信息毫无意义的，或刻意使用字符组合以逃避技术审核的；
+            （21）侵害未成年人合法权益或者损害未成年人身心健康的；
+            （22）未获他人允许，偷拍、偷录他人，侵害他人合法权利的； 
+            （23）包含恐怖、暴力血腥、高危险性、危害表演者自身或他人身心健康内容的，包括但不限于以下情形：
+                任何暴力和/或自残行为内容；
+                任何威胁生命健康、利用刀具等危险器械表演的危及自身或他人人身及/或财产权利的内容；
+                怂恿、诱导他人参与可能会造成人身伤害或导致死亡的危险或违法活动的内容。
+            （24）其他违反法律法规、政策及公序良俗、干扰“抖音”正常运营或侵犯其他用户或第三方合法权益内容的其他信息。
+5，本协议的版权为公司所有，公司保留一切解释和修改的权利。
+                </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--主页面-->
+    <div class="all_cover">
+        <button class="btn btn-default" id="login_btn">登 录</button>
+        <button class="btn btn-default" id="register_btn">注 册</button>
+        <button class="btn btn-default" id="tourist_btn" href="new.html?identity=tourist">游客</button>
+        <div class="jumbotron" id="Center_text">
+            <div class="container"
+                style="position: absolute;top: 180px;left: 250px; background: rgba(67,67,68,0); border-radius: 10px;height: 300px;width: 1050px;">
+                <h1>xxxxxxxxx</h1>
+                <p style="font-size: 48px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相片是记录时光的使者，可以让精神独自穿越时空,记录一个瞬间，留到未来相对一笑。
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

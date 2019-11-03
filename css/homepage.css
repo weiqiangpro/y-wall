@@ -1,0 +1,121 @@
+body{
+    position: absolute;
+    width: 100%;
+}
+.author{
+    width: 60%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid;*/
+}
+#spare{
+    border: none;
+}
+#report{
+    border: none;
+}
+
+#add{
+    border:none;
+}
+#redact{
+    border:none;
+}
+
+#pri-letter{
+    float: right;
+    height: 40px;
+    width: 70px;
+    margin-right: 15px;
+}
+#attent{
+    float: right;
+    height: 40px;
+    width: 70px;
+}
+.author-msg{
+    margin-top: 30px;
+}
+#author-head img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+#author-head div{
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    font-family: 微软雅黑;
+}
+
+#author-name{
+    font-family: "微软雅黑";
+    font-weight: bolder;
+    font-size: 30px;
+    margin-left: 30px;
+}
+#author-sign{
+    font-family: "微软雅黑 Light";
+    font-size: 18px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+#author-num{
+    margin-left: 30px;
+    font-family: "微软雅黑";
+    font-weight: bolder;
+    margin-top: 5px;
+}
+.h4{
+    font-family: 微软雅黑;
+    margin-top: 30px;
+    color: grey;
+}
+.box{
+    width: 300px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    float: left;
+}
+
+.box:hover{
+    background-color: darkgrey;
+    border:1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container{
+    width: 70%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f5f5f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.main{
+}
+#letter-text{
+    width: 70%;
+    height: 200px;
+    margin-left: 15%;
+    background: #f5f5f7;
+    border-radius: 5px;
+}
+#send{
+    margin-bottom: 20px;
+    margin-left: 70%;
+
+}
+#cancel{
+    /*float: left;*/
+    /*margin-left: 90%;*/
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

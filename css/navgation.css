@@ -1,0 +1,237 @@
+.search-icon{
+    position: absolute;
+    width: 35px;
+    top: 18px;
+    left: 10px;
+}
+
+#search-input{
+    margin-top: 13px;
+    height: 45px;
+    width: 60%;
+    padding-left: 50px;
+    font-size: 20px;
+    background: #f5f5f7;
+}
+
+#brand{
+    height: 70px;
+    line-height: 40px;
+    font-size: 32px;
+}
+
+#head{
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+    margin-top: 17px;
+}
+#username{
+    padding-top: 25px;
+    font-size: 20px;
+}
+
+#msg{
+    position: fixed;
+    z-index: 999;
+    width: 20%;
+    right: 0;
+    border: 1px gray;
+    display: none;
+    background-color: white;
+    overflow: auto;
+    -moz-box-shadow:0 1px 2px gray; -webkit-box-shadow:0 1px 2px gray; box-shadow:0 1px 4px gray;
+}
+#fri{
+    position: fixed;
+    z-index: 999;
+    width: 20%;
+    right: 0;
+    border: 1px gray;
+    display: none;
+    background-color: white;
+    overflow: auto;
+    -moz-box-shadow:0 1px 2px gray; -webkit-box-shadow:0 1px 2px gray; box-shadow:0 1px 4px gray;
+}
+#friends{
+    padding-top: 25px;
+    margin-left: 30px;
+}
+#message{
+    padding-top: 25px;
+    margin-left: 30px;
+}
+#message:hover{
+    cursor: pointer;
+}
+#friends:hover{
+    cursor: pointer;
+}
+
+.msg{
+    /*border: 1px #eee solid;*/
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    -moz-box-shadow:0 0 4px gray;
+    -webkit-box-shadow:0 0 4px gray;
+    box-shadow:0 0 4px gray;
+    cursor: pointer;
+}
+.fri{
+    border: 1px lightgray solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    background-color: white;
+    /*-moz-box-shadow:0 1px 1px gray;*/
+    /*-webkit-box-shadow:0 1px 1px gray;*/
+    /*box-shadow:0 1px 1px gray;*/
+}
+.msg-username{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.fri_name{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.fri_sign{
+    font-size: 16px;
+    margin-left: 55px;
+    color: darkgrey;
+}
+.msg_content{
+    font-size: 16px;
+    margin-left: 55px;
+    color: darkgrey;
+}
+hr{
+    color: black;
+    width: 96%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.container{
+    margin-bottom: 20px;
+}
+#reply_msg{
+    display: none;
+    width: 80%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    outline:medium;
+}
+#reply{
+    margin-left: 70%;
+    margin-bottom: 20px;
+}
+#cancel{
+    margin-bottom: 20px;
+    /*float: left;*/
+}
+#send{
+    margin-left: 75%;
+    margin-bottom: 20px;
+}
+#drop_btn{
+    padding-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px
+}
+#drop_btn:hover{
+    cursor: pointer;
+}
+#more{
+    position: fixed;
+    width: 15%;
+    right: 0;
+    border: 1px gray;
+    border-radius: 8px;
+    margin-top: 73px;
+    display: none;
+    background-color: white;
+    overflow: auto;
+    z-index: 9999;
+    -moz-box-shadow:0 1px 2px gray; -webkit-box-shadow:0 1px 2px gray; box-shadow:0 1px 4px gray;
+}
+#more hr{
+    margin: 0;
+}
+#publish{
+    width: 100%;
+    font-family: "微软雅黑";
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+}
+#edit{
+    width: 100%;
+    font-family: "微软雅黑";
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+}
+#exit{
+    width: 100%;
+    font-family: "微软雅黑";
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+}
+#receive_msg{
+    width: 50%;
+    float: left;
+    border-radius: 0;
+    border:none;
+}
+#send_msg{
+    width: 50%;
+    float: left;
+    border-radius: 0;
+    border-bottom: none;
+    border-top: none;
+    /*border-left: none;*/
+}
+#msg-con{
+   margin-top: 50px;
+}
+#hint{
+    position: fixed;
+    background-color: white;
+    width: 300px;
+    height: 110px;
+    top: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 10px;
+    -moz-box-shadow:0px 0px 9px #333333;
+    -webkit-box-shadow:0px 0px 9px #333333;
+    box-shadow:0px 0px 9px #333333;
+}
+#hint_confirm{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    background-color: #00b3ee;
+    color: whitesmoke;
+}
+#hint_cont{
+    margin-top: 40px;
+    margin-left: 100px;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    color: gray;
+}

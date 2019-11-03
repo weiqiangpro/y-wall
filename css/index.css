@@ -1,0 +1,88 @@
+body{
+    overflow: hidden;
+}
+.img{
+    width: 250px;
+    border-radius: 15px;
+    float: left;
+    padding: 5px;
+}
+.all_cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(96,96,96,0.5);
+}
+#login_btn{
+    position: absolute;
+    top: 50px;
+    right:200px;
+    width: 100px;
+    height: 45px;
+    font-family:    微软雅黑;
+    font-size: 20px;
+    border-radius: 12px;
+}
+#register_btn{
+    position: absolute;
+    top:50px;
+    right: 350px;
+    width: 100px;
+    height: 45px;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    border-radius: 12px;
+}
+#tourist_btn{
+    position: absolute;
+    top:50px;
+    right: 500px;
+    width: 100px;
+    height: 45px;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.head-photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    /*margin: 30px 150px;*/
+}
+#username,#password,#r_username,#r_email,#r_password,#r_confirmpassword{
+    width: 230px;
+}
+#login,#register{
+    width: 125px;
+    background: rosybrown;
+    color: whitesmoke;
+}
+#yibanlogin,#yibanlogin_{
+    width: 125px;
+    margin-top: 0;
+    background: #00b3ee;
+    color: whitesmoke;
+}
+#Center_text{
+    background: rgba(245,245,247,0);
+    color: whitesmoke;
+    font-family: '微软雅黑 Light';
+}
+#error_msg{
+    color:red;
+    margin-left: 170px;
+}
+#ver{
+    width: 150px;
+    margin-left: 30px;
+}
+#ver_btn{
+    margin-left: 10px;
+    width: 96px;
+    text-align: center;
+}
+#forgetpass{
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+}

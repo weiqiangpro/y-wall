@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑个人资料</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/navgation.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" type="text/css" href="http://www.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="http://www.huangwx.cn/js/sweetalert-dev.js"></script>
+
+    <script src="js/navgation.js"></script>
+    <script src="js/edit.js"></script>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-default navbar-fixed-top" style="background: white" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header" style="margin-left: 50px;">
+            <a class="navbar-brand" id="brand" href="#">IMG</a>
+        </div>
+        <ul class="nav navbar-nav" style="height: 70px;margin-left: 20px;">
+            <li>
+                <input class="form-control" id="search-input">
+                <img class="search-icon" src="img/css/搜索.png">
+            </li>
+            <li><a href="new.html" style="padding-top: 25px;font-size: 20px; color: black">主页</a></li>
+            <li><a href="attention.html" style="padding-top: 25px;font-size: 20px;">关注</a></li>
+            <li class="btn-group" style="margin-top: 15px;">
+                <button class="btn btn-default" id="hot" style="font-size: 20px;">热门</button>
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 42px">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a id="comment-most">评论最多</a></li>
+                    <li><a id="love-most">点赞最多</a></li>
+                    <li><a id="hot-most">综合热度</a></li>
+                </ul>
+            </li>
+            <li>
+                <img id="head" src="img/1.jpg">
+            </li>
+            <li><a href="homepage.html?authorid='1'" id="username"></a></li>
+            <li><a style="font-size: 26px;margin-left: 10px;margin-top: 10px">|</a></li>
+            <li><a class="iconfont" id="friends">&#xe609;</a></li>
+            <li><a class="iconfont" id="message">&#xe523;</a></li>
+            <li><a class="iconfont" id="drop_btn">&#xe6d4;</a></li>
+        </ul>
+
+    </div>
+</nav>
+<!--消息侧边栏-->
+<div id="msg">
+    <h4 style='margin-left: 40%;margin-right: auto;'>消息列表</h4><hr>
+    <button class="btn btn-default" id="receive_msg">接收到的信息</button>
+    <button class="btn btn-default" id="send_msg">已发送的信息</button>
+    <div id="msg-con">
+
+    </div>
+</div>
+<!--好友侧边栏-->
+<div id="fri"></div>
+<!--更多按钮组-->
+<div id="more">
+    <a type="button" class="btn btn-default" id="publish" href="publishworks.html">发布作品</a>
+    <hr>
+    <a type="button" class="btn btn-default" id="edit" href="edit.html">修改资料</a>
+    <hr>
+    <a type="button" class="btn btn-default" id="exit">退出</a>
+</div>
+<!--消息模态框-->
+<div class="modal fade" id="message_modal" role="dialog" aria-hidden="false" aria-label="modal" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 style="font-family: '微软雅黑';margin-left: 20px;"></h4>
+            <hr>
+            <div class="container">你好</div>
+            <hr>
+            <textarea id="reply_msg"></textarea>
+            <hr id="hr">
+            <div>
+                <button class="btn btn-default" id="reply">回复</button>
+                <button class="btn btn-default" id="send" style="display: none;">发送</button>
+                <button class="btn btn-default" id="cancel" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-back">
+    <div class="container">
+        <h2 style="float: left;margin-left: 20px; margin-bottom: 0;">编辑个人资料</h2><br><br><br>
+        <small style="float: left;margin-top: -8px;margin-left: 20px;color: gray;">其他用户会通过以下信息了解你</small>
+        <button class="btn btn-default" id="complete">完成</button>
+        <button class="btn btn-default" id="edit_cancel">取消</button>
+        <button class="btn btn-default" id="change_pass">修改密码</button>
+
+        <h4 style="margin-top: 60px;margin-left: 20px;">头像</h4>
+        <img id="head-big" src="img/14.jpg"><button class="btn btn-primary" id="revise-head">修改头像<input type="file" id="head-file" accept="image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/webp"></input></button>
+
+        <h4 style="margin-top: 30px;margin-left: 20px;">昵称</h4>
+        <input class="form-control" id="nickname">
+
+        <h4 style="margin-top: 20px;margin-left: 20px;">性别</h4>
+        <div class="radio" style="margin-left:20px;">
+            <label class="radio-inline">
+                <input type="radio" name="gender" id="nan">男
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" id="nv">女
+            </label>
+        </div>
+
+        <h4 style="margin-top: 20px;margin-left: 20px;">出生日期</h4>
+        <input class="form-control" type="date" id="birth">
+
+        <h4 style="margin-left: 20px;margin-top: 20px">家乡</h4>
+        <input id="home" type="text" class="form-control">
+
+        <h4 style="margin-top: 20px;margin-left: 20px;">关于您的介绍</h4>
+        <textarea class="form-control" id="author-sign"></textarea>
+
+    </div>
+</div>
+
+<div class="modal fade" id="change_pass_modal" role="dialog" aria-hidden="false" aria-label="modal" data-backdrop="static">
+    <div class="modal-dialog" style="width: 35%">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <br>
+            <div style="text-align: center; font-size: 24px; font-family: '微软雅黑 Light'">修改密码</div>
+            <div class="form-group" style="margin-left: 25%;width: 55%; margin-top: 50px;">
+                <label style="float: left;">新密码：</label>
+                <input class="form-control" id="new_pass1" style="width: 75%"/>
+            </div>
+            <div class="form-group" style="margin-left: 23%;width: 55%; margin-top: 20px;">
+                <label style="float: left;">确认密码：</label>
+                <input class="form-control" id="new_pass2" style="width: 75%"/>
+            </div>
+            <div class="form-group" style="margin-left: 25%;width: 55%; margin-top: 20px;">
+                <label style="float: left;">旧密码：</label>
+                <input class="form-control" id="old_pass" style="width: 75%"/>
+            </div>
+            <div id="mes"></div>
+            <br>
+            <button class="btn btn-primary" id="confirm_change">确认修改</button>
+            <button class="btn btn-primary" id="cancel_change"> 取消 </button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
