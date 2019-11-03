@@ -22,7 +22,19 @@ $(document).ready(function () {
     //照片墙居中
     cols = SetCenter("#img-wall",".main");
     ImgPosition(".main",".box",cols);
-
+//关注按钮
+    $("#attent").click(function () {
+        Follow(author_id);
+    });
+//发送按钮
+    $("#send_").click(function () {
+        console.log(author_id);
+        SendMsg(token,author_id);
+    });
+//私信按钮
+    $("#pri-letter").click(function () {
+        $("#pri-letter_modal").modal("show");
+    });
 });
 
 //浏览器窗口尺寸适配
@@ -47,18 +59,7 @@ $(document).scroll(function () {
     }
 });
 
-//关注按钮
-$("#attent").click(function () {
-    Follow(author_id);
-});
-//发送按钮
-$("#send").click(function () {
-    SendMsg(token,author_id);
-});
-//私信按钮
-$("#pri-letter").click(function () {
-    $("#pri-letter_modal").modal("show");
-});
+
 
 //获取作品
 function GetWorks(userid,page) {
@@ -136,8 +137,8 @@ function ImgPosition(parent, child, cols) {
     var minindex;
     var minheight;
     // var mainmargin = parseFloat($(parent).css("margin-left"));
-    var initheight = $(parent).find(child+":first-child").offset().top;
-    var initleft = $(parent).find(child+":first-child").offset().left;
+    var initheight = $(parent).find(child+":first-child").offsetTop;
+    var initleft = $(parent).find(child+":first-child").offsetLeft;
     for(var i = 0;i < allbox.length; i++){
         var j = i+1;
         box = $(allbox[i]);

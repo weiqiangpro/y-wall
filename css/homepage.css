@@ -108,12 +108,12 @@ body{
     background: #f5f5f7;
     border-radius: 5px;
 }
-#send{
+#send,#send_{
     margin-bottom: 20px;
     margin-left: 70%;
 
 }
-#cancel{
+#cancel,#cancel_{
     /*float: left;*/
     /*margin-left: 90%;*/
     margin-bottom: 20px;

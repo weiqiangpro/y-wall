@@ -3,14 +3,13 @@ $(document).ready(function () {
         window.location.href="index.html"
     }
     InitMsg();
-});
+
 
 //完成修改
 $("#complete").click(function () {
     var file = document.getElementById("head-file").files[0];
     var nickname = $("#nickname").val();
     var gender = GetGender();
-    $("#birth").val("2019-10-25");
     var birth = $("#birth").val();
     var home = $("#home").val();
     var person = $("#author-sign").val();
@@ -35,7 +34,8 @@ $("#complete").click(function () {
         contentType: false,
         processData: false,
         success:function (res) {
-        }
+	alert_("修改成功");	       
+ }
     });
 
 });
@@ -125,4 +125,5 @@ $("#confirm_change").click(function () {
             }
         })
     }
+});
 });

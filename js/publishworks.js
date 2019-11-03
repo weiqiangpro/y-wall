@@ -1,11 +1,12 @@
 $(document).ready(function () {
     if(token === "" || token === null){
-        // window.location.href="index.html"
+         window.location.href="index.html"
     }
 
     var me_msg = GetMeMsg(token);
+	console.log(me_msg);
     $("#work-head").attr("src",me_msg.pho);
-    $("#author-name").append(me_msg.name);
+    $("#author-name").append(me_msg.userName);
     var win_height = window.outerHeight;
     var win_width = window.outerWidth;
     $(".main-back").css("height",window.outerHeight+"px");
@@ -32,8 +33,8 @@ $(document).ready(function () {
         img.empty();
         img.css('text-align','center');
         var imgfile = $("<img id='img' />");
-        imgfile.css("max-height",imgfile.height());
-        imgfile.css("max-width",imgfile.width());
+        imgfile.css("max-height",img.height());
+        imgfile.css("max-width",img.width());
         reader.addEventListener("load", function () {
             imgfile.attr("src",reader.result);
         }, false);

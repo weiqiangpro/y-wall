@@ -141,8 +141,8 @@ function ImgPosition(parent, child, cols) {
     var minindex;
     var minheight;
     // var mainmargin = parseFloat($(parent).css("margin-left"));
-    var initheight = $(parent).find(child+":first-child").offset().top;
-    var initleft = $(parent).find(child+":first-child").offset().left;
+    var initheight = $(parent).find(child+":first-child").offsetTop;
+    var initleft = $(parent).find(child+":first-child").offsetLeft;
     for(var i = 0;i < allbox.length; i++){
         var j = i+1;
         box = $(allbox[i]);
