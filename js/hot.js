@@ -84,6 +84,7 @@ $(window).resize(function () {
 // 第一次获取图片，返回具体图片信息
 function FirstGetImg() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
@@ -96,24 +97,34 @@ function FirstGetImg() {
         async:false,
         success: function(datas) {
             data = datas.data.list;
+            size = GetPageSize(data);
         }
     });
-    $.ajax({
-        url:"https://www.aoteam.top/api/article/topgood/2",
-        type:"GET",
-        headers:{
-            Token:token
-        },
-        async:false,
-        success: function(datas) {
-            data = data.concat(datas.data.list);
+    if(size<2){
+        isempty = true;
+    }else {
+        $.ajax({
+            url: "https://www.aoteam.top/api/article/topgood/2",
+            type: "GET",
+            headers: {
+                Token: token
+            },
+            async: false,
+            success: function (datas) {
+                data = data.concat(datas.data.list);
+            }
+        });
+        pagenum++;
+        if(size === pagenum){
+            isempty = true;
         }
-    });
+    }
     return data;
 }
 //第一次获取评论top图片
 function FirstGetImg_Comment() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
@@ -126,8 +137,12 @@ function FirstGetImg_Comment() {
         async:false,
         success: function(datas) {
             data = datas.data.list;
+            size = GetPageSize(data);
         }
     });
+    if(size<2){
+        isempty = true;
+    }else {
     $.ajax({
         url:"https://www.aoteam.top/api/article/topcomment/2",
         type:"GET",
@@ -139,11 +154,17 @@ function FirstGetImg_Comment() {
             data = data.concat(datas.data.list);
         }
     });
+        pagenum++;
+        if(size === pagenum){
+            isempty = true;
+        }
+    }
     return data;
 }
 //第一次获取综合top图片
 function FirstGetImg_Hot() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
@@ -156,8 +177,12 @@ function FirstGetImg_Hot() {
         async:false,
         success: function(datas) {
             data = datas.data.list;
+            size = GetPageSize(data);
         }
     });
+    if(size<2){
+        isempty = true;
+    }else {
     $.ajax({
         url:"https://www.aoteam.top/api/article/topall/2",
         type:"GET",
@@ -169,6 +194,11 @@ function FirstGetImg_Hot() {
             data = data.concat(datas.data.list);
         }
     });
+    pagenum++;
+    if(size === pagenum){
+        isempty = true;
+    }
+}
     return data;
 }
 

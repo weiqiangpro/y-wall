@@ -10,7 +10,6 @@ $(document).ready(function () {
     var screenwidth = $(window).width();
     var cols = parseInt(screenwidth/boxwidth);
     ImgPosition(".main",".box",cols);
-    pagenum = pagenum + 2;
 
 });
 
@@ -98,9 +97,11 @@ function GetPageSize(datas) {
 // 第一次获取图片，返回具体图片信息
 function FirstGetImg() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
+
     $.ajax({
         url:"https://www.aoteam.top/api/article/get/1",
         type:"GET",
@@ -110,19 +111,28 @@ function FirstGetImg() {
         async:false,
         success: function(datas) {
             data = GetImgMsg(datas);
+            size = GetPageSize(data);
         }
     });
-    $.ajax({
-        url:"https://www.aoteam.top/api/article/get/2",
-        type:"GET",
-        headers:{
-            Token:token
-        },
-        async:false,
-        success: function(datas) {
-            data = data.concat(GetImgMsg(datas));
+    if(size<2){
+        isempty = true;
+    }else{
+        $.ajax({
+            url:"https://www.aoteam.top/api/article/get/2",
+            type:"GET",
+            headers:{
+                Token:token
+            },
+            async:false,
+            success: function(datas) {
+                data = data.concat(GetImgMsg(datas));
+            }
+        });
+        pagenum++;
+        if(size === pagenum){
+            isempty = true;
         }
-    });
+    }
     return data;
 }
 

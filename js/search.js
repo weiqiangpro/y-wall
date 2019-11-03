@@ -45,10 +45,13 @@ $(document).scroll(function () {
             $(document).unbind('scroll');
         }else{
             $.ajax({
-                url:"https://www.aoteam.top/api/article/select/"+pagenum+"?mes="+mes,
-                type:"GET",
+                url:"https://www.aoteam.top/api/article/select/"+pagenum,
+                type:"POST",
                 headers:{
                     Token:token
+                },
+                data: {
+                    mes:mes
                 },
                 dataType:"json",
                 async:false,
@@ -104,31 +107,47 @@ function GetPageSize(datas) {
 // 第一次获取图片，返回具体图片信息
 function FirstGetImg() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
     $.ajax({
-        url:"https://www.aoteam.top/api/article/select/1?mes="+mes,
-        type:"GET",
+        url:"https://www.aoteam.top/api/article/select/1",
+        type:"POST",
         headers:{
             Token:token
+        },
+        data: {
+            mes:mes
         },
         async:false,
         success: function(datas) {
             data = GetImgMsg(datas);
+            size = GetPageSize(datas);
         }
     });
+    if(size<2){
+        isempty = true;
+    }else{
     $.ajax({
-        url:"https://www.aoteam.top/api/article/select/2?mes="+mes,
-        type:"GET",
+        url:"https://www.aoteam.top/api/article/select/2",
+        type:"POST",
         headers:{
             Token:token
+        },
+        data: {
+            mes:mes
         },
         async:false,
         success: function(datas) {
             data = data.concat(GetImgMsg(datas));
         }
     });
+    pagenum++;
+    if(size === pagenum){
+        isempty = true;
+    }
+}
     return data;
 }
 

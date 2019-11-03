@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ @Author: weiqiang
+ @Time: 19-11-3 下午5:23
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var MouseWheelHandler = function(e) {
+        console.log(11);
+    }
+    var addMouseWheelHandler = function() {
+        document.addEventListener("mousewheel", MouseWheelHandler, false);
+    }
+    addMouseWheelHandler();
+</script>
+</body>
+</html>

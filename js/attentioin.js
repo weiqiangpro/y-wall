@@ -90,6 +90,7 @@ function GetPageSize(datas) {
 // 第一次获取图片，返回具体图片信息
 function FirstGetImg() {
     var data;
+    var size;
     if(!islogin){
         // token = null;
     }
@@ -105,19 +106,28 @@ function FirstGetImg() {
                 window.location.href="index.html";
             }
             data = GetImgMsg(datas);
+            size = GetPageSize(data);
         }
     });
-    $.ajax({
-        url:"https://www.aoteam.top/api/article/follow.do/2",
-        type:"GET",
-        headers:{
-            Token:token
-        },
-        async:false,
-        success: function(datas) {
-            data = data.concat(GetImgMsg(datas));
+    if(size<2){
+        isempty = true;
+    }else {
+        $.ajax({
+            url: "https://www.aoteam.top/api/article/follow.do/2",
+            type: "GET",
+            headers: {
+                Token: token
+            },
+            async: false,
+            success: function (datas) {
+                data = data.concat(GetImgMsg(datas));
+            }
+        });
+        pagenum++;
+        if(size === pagenum){
+            isempty = true;
         }
-    });
+    }
     return data;
 }
 

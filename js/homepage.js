@@ -269,6 +269,7 @@ function SendMsg(token,userid) {
             if(res.data === null) {
                 alert_("您未登录！");
             }else{
+                $("#pri-letter_modal").modal("hide");
                 alert_(res.msg);
             }
         }
